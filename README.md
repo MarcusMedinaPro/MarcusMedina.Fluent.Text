@@ -25,9 +25,9 @@ This package is under active development in `_WIP_`.
 
 ## Documentation
 
-- [Getting Started](./csharp/Manual/GettingStarted.md)
-- [API Overview](./csharp/Manual/API.md)
-- [Advanced Usage](./csharp/Manual/Advanced.md)
+- [Getting Started](https://github.com/MarcusMedinaPro/MarcusMedina.Fluent.Text/blob/main/csharp/Manual/GettingStarted.md)
+- [API Overview](https://github.com/MarcusMedinaPro/MarcusMedina.Fluent.Text/blob/main/csharp/Manual/API.md)
+- [Advanced Usage](https://github.com/MarcusMedinaPro/MarcusMedina.Fluent.Text/blob/main/csharp/Manual/Advanced.md)
 
 ## Development
 
@@ -40,7 +40,7 @@ dotnet build -c Release
 
 All releases are signed with [cosign](https://docs.sigstore.dev) (Sigstore keyless signing).
 
-To verify a downloaded package, download both the `.nupkg` and its `.sigstore.json` bundle from the [GitHub Release](../../releases), then run:
+To verify a downloaded package, download both the `.nupkg` and its `.sigstore.json` bundle from the [GitHub Release](../https://github.com/MarcusMedinaPro/MarcusMedina.Fluent.Text/releases), then run:
 
 ```bash
 cosign verify-blob <package.nupkg> \
