@@ -51,3 +51,20 @@ cosign verify-blob <package.nupkg> \
 
 Expected output: `Verified OK`
 
+
+## Made for Curious Minds
+
+This library was built with students in mind — not as a black box to copy and paste, but as a real-world example of how clean, purposeful code is written and shared.
+
+Whether you're discovering C# for the first time, need a reliable helper for your school project, or are simply trying to fall in love with writing code — you're exactly who this was made for.
+
+The source is open. Read it, fork it, break it, improve it. That's the whole point.
+
+And if this library saved you an afternoon, or made something click that didn't before — that's everything.
+
+*Non-students are equally welcome. Good code doesn't care about your diploma.*
+
+⭐ If this helped you, consider starring the project on GitHub — it helps other students find it too.
+
+💬 Have an idea, a feature request, or just want to say hi? Open an issue on GitHub — I'd love to hear from you.
+
