@@ -1,4 +1,4 @@
-# FluentBuilders.Text
+# MarcusMedina.Fluent.Text
 
 [![NuGet](https://img.shields.io/nuget/v/MarcusMedina.Fluent.Text.svg?style=for-the-badge&logo=nuget)](https://www.nuget.org/packages/MarcusMedina.Fluent.Text/)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/MarcusMedina.Fluent.Text.svg?style=for-the-badge&logo=nuget)](https://www.nuget.org/packages/MarcusMedina.Fluent.Text/)
@@ -6,7 +6,7 @@
 [![.NET](https://img.shields.io/badge/.NET-10.0+-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 ![Open Source](assets/open-source.svg)
-[![Build](https://img.shields.io/github/actions/workflow/status/MarcusMedinaPro/FluentBuilders.Text/release.yml?branch=main&label=Build&style=for-the-badge&logo=github)](https://github.com/MarcusMedinaPro/FluentBuilders.Text/actions)
+[![Build](https://img.shields.io/github/actions/workflow/status/MarcusMedinaPro/MarcusMedina.Fluent.Text/release.yml?branch=main&label=Build&style=for-the-badge&logo=github)](https://github.com/MarcusMedinaPro/MarcusMedina.Fluent.Text/actions)
 [![Signed](https://img.shields.io/badge/Signed-Sigstore-green?style=for-the-badge&logo=linux)](https://docs.sigstore.dev)
 
 
@@ -16,7 +16,7 @@
 ## Installation
 
 ```bash
-dotnet add package MarcusMedina.Fluent.Text.Core.Core
+dotnet add package MarcusMedina.Fluent.Text
 ```
 
 ## Status
