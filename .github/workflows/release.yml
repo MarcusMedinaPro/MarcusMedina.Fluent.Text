@@ -1,9 +1,10 @@
-name: Release - Full Pipeline
+name: 🚀 Release - Full Pipeline
 
 on:
   push:
     tags: ["v*"]
     branches: [release, main]
+  workflow_dispatch:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -17,7 +18,7 @@ permissions:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-    name: 1 Build & Test
+    name: 1️⃣ Build & Test
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -52,11 +53,10 @@ jobs:
           name: test-results
           path: '**/TestResults/**/*.trx'
 
-
-  package-signing:
+  quality-gate:
     needs: build-and-test
-    runs-on: [self-hosted, Signer]
-    name: 3 Package Signing
+    runs-on: ubuntu-latest
+    name: 2️⃣ Code Quality
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -66,47 +66,64 @@ jobs:
         with:
           dotnet-version: 10.0.x
 
+      - name: Restore dependencies
+        run: dotnet restore csharp/MarcusMedina.Fluent.Text.Core.slnx
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: csharp
+          queries: security-extended,security-and-quality
+
+      - name: Build for CodeQL
+        run: dotnet build csharp/MarcusMedina.Fluent.Text.Core.slnx --configuration Release --no-restore
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+
+      - name: Dependency Vulnerability Scan
+        run: |
+          dotnet list package --vulnerable --include-transitive 2>&1 | tee vulnerability-report.txt
+        continue-on-error: true
+
+      - name: Upload quality reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: quality-reports
+          path: vulnerability-report.txt
+
+  package-signing:
+    needs: quality-gate
+    runs-on: ubuntu-latest
+    name: 3️⃣ Package Signing
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
       - name: Download unsigned packages
         uses: actions/download-artifact@v4
         with:
           name: unsigned-packages
           path: ./unsigned
 
-      - name: Sign packages
-        shell: cmd
-        run: |
-          for %%f in (./unsigned/*.nupkg) do (
-            echo Signing: %%f
-            dotnet nuget sign "./unsigned/%%f" ^
-              --certificate-store-name My ^
-              --certificate-store-location CurrentUser ^
-              --certificate-subject-name "Open Source Developer, Marcus Ackre Medina" ^
-              --timestamper http://time.certum.pl
-          )
+      - name: Install cosign
+        uses: sigstore/cosign-installer@v3
 
-      - name: Verify signatures
-        shell: cmd
+      - name: Sign packages
         run: |
-          echo Verifying signatures...
-          for %%f in (./unsigned/*.nupkg) do (
-            echo Verifying: %%f
-            dotnet nuget verify "./unsigned/%%f"
-            if errorlevel 1 (
-              echo ERROR: Verification failed for %%f
-              exit /b 1
-            )
-          )
+          for pkg in ./unsigned/*.nupkg; do
+            cosign sign-blob "$pkg" \
+              --bundle "${pkg}.sigstore.json" \
+              --yes
+          done
 
       - name: Generate SHA256 checksums
-        shell: pwsh
         run: |
-          cd ./unsigned
-          $files = Get-ChildItem *.nupkg
-          $files | ForEach-Object {
-            $hash = (Get-FileHash $_.FullName -Algorithm SHA256).Hash
-            "$hash  $($_.Name)"
-          } | Out-File SHA256SUMS.txt
-          Get-Content SHA256SUMS.txt
+          cd unsigned
+          sha256sum *.nupkg > SHA256SUMS.txt
+          cat SHA256SUMS.txt
 
       - name: Upload signed packages
         uses: actions/upload-artifact@v4
@@ -114,12 +131,13 @@ jobs:
           name: signed-packages
           path: |
             ./unsigned/*.nupkg
+            ./unsigned/*.sigstore.json
             ./unsigned/SHA256SUMS.txt
 
   publish-nuget:
     needs: package-signing
     runs-on: ubuntu-latest
-    name: 4 Publish to NuGet.org
+    name: 4️⃣ Publish to NuGet.org
     if: startsWith(github.ref, 'refs/tags/v')
     steps:
       - name: Checkout
@@ -148,7 +166,8 @@ jobs:
         with:
           files: |
             ./packages/*.nupkg
+            ./packages/*.sigstore.json
             ./packages/SHA256SUMS.txt
           generate_release_notes: true
           draft: false
-          prerelease: false
+          prerelease: ${{ contains(github.ref_name, '-alpha') || contains(github.ref_name, '-beta') || contains(github.ref_name, '-rc') }}
