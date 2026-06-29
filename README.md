@@ -52,6 +52,14 @@ cosign verify-blob <package.nupkg> \
 Expected output: `Verified OK`
 
 
+## Built with Human + AI Collaboration
+
+This library was written by **Marcus Medina** together with **Claude Code** (Anthropic) — not through "vibe coding" where you just describe and accept, but through genuine collaboration: planning together, reviewing each other's decisions, pushing back when something felt wrong, and iterating until the result felt right.
+
+The goal was always to write code worth reading — the kind a student can open, understand, and learn from. AI was a partner in that process, not a shortcut around it.
+
+If you're curious about this way of working, the source code and git history are open. Every decision has a reason behind it.
+
 ## Made for Curious Minds
 
 This library was built with students in mind — not as a black box to copy and paste, but as a real-world example of how clean, purposeful code is written and shared.
