@@ -103,7 +103,7 @@ jobs:
 
     steps:
       - name: Download unsigned packages
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: unsigned-packages
           path: ./unsigned
@@ -149,7 +149,7 @@ jobs:
           dotnet-version: 10.0.x
 
       - name: Download signed packages
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: signed-packages
           path: ./packages
