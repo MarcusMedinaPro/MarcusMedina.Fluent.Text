@@ -27,6 +27,7 @@
 - ✅ **Extraction** — pull structured pieces out of free text
 - ✅ **Pattern matching** — extension helpers over common regex-shaped problems
 - ✅ **Data-format conversion** — string ↔ common data formats
+- ✅ **Word-set comparison** — `JaccardSimilarity()`, `MostFrequentFirst()`, `FrequencyScores()`, `PresentInAll()`, `UniqueTo()`
 
 ## Requirements
 
@@ -36,6 +37,20 @@
 
 ```bash
 dotnet add package MarcusMedina.Fluent.Text
+```
+
+## Quick Start
+
+```csharp
+using MarcusMedina.Fluent.Text.Core.Extensions.WordSet;
+
+var sunTraits = new[] { "Disciplined", "Ambitious", "Patient" };
+var moonTraits = new[] { "Curious", "Adaptable", "Communicative" };
+
+double similarity = sunTraits.JaccardSimilarity(moonTraits);
+
+var allPlacements = new[] { "Disciplined", "Adaptable", "Disciplined", "Curious" };
+var dominant = allPlacements.MostFrequentFirst().First(); // "Disciplined"
 ```
 
 ## Documentation

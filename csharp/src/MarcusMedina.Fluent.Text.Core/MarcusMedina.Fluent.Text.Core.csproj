@@ -12,14 +12,14 @@
 
 
     <PackageId>MarcusMedina.Fluent.Text</PackageId>
-    <Version>2.0.1</Version>
+    <Version>2.1.0</Version>
     <Authors>Marcus Ackre Medina</Authors>
     <Company>Marcus Ackre Medina</Company>
-    <Product>FluentBuilders</Product>
-    <Description>Fluent builder for Text manipulation (.NET 10+)</Description>
+    <Product>MarcusMedina</Product>
+    <Description>Fluent string extensions for line endings, casing, counting, validation, manipulation, extraction, pattern matching, data-format conversion, and word-set comparison (.NET 10+)</Description>
     <PackageTags>fluent;builder;text;strings;extension;marcusmedina;net10</PackageTags>
-    <PackageProjectUrl>https://github.com/MarcusMedinaPro/FluentBuilders.Text</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/MarcusMedinaPro/FluentBuilders.Text</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/MarcusMedinaPro/MarcusMedina.Fluent.Text</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/MarcusMedinaPro/MarcusMedina.Fluent.Text</RepositoryUrl>
 <RepositoryType>git</RepositoryType>
 
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
