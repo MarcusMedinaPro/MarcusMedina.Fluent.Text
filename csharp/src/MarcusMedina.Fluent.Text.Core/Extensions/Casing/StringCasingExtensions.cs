@@ -237,15 +237,12 @@ public static class StringCasingExtensions
         var words = SplitIntoWords(value);
         var result = new StringBuilder();
 
-        foreach (var word in words)
+        foreach (var word in words.Where(word => word.Length > 0))
         {
-            if (word.Length > 0)
+            result.Append(char.ToUpper(word[0], CultureInfo.InvariantCulture));
+            if (word.Length > 1)
             {
-                result.Append(char.ToUpper(word[0], CultureInfo.InvariantCulture));
-                if (word.Length > 1)
-                {
-                    result.Append(word[1..].ToLower(CultureInfo.InvariantCulture));
-                }
+                result.Append(word[1..].ToLower(CultureInfo.InvariantCulture));
             }
         }
 
