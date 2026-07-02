@@ -13,6 +13,8 @@
 
 **Fluent builder for Text manipulation**
 
+> **Story:** _TODO — ask Marcus for the real background behind this package._
+
 ## Installation
 
 ```bash
