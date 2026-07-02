@@ -11,19 +11,32 @@
 
 
 
-**Fluent builder for Text manipulation**
+**Fluent string extensions for line endings, casing, counting, validation, manipulation, extraction, pattern matching, and data-format conversion — one call per confusion.**
 
-> **Story:** _TODO — ask Marcus for the real background behind this package._
+> This one is built entirely out of watching my students struggle. I paid attention to whatever confused them most about working with strings — case conversion, whitespace, line endings, the usual traps — and once a course wrapped up, turned those pain points into a library to smooth the path for the next cohort. So it's genuinely inspired by students' sweat and tears with code. It's also become one of my own everyday tools — I reach for it constantly when generating documents and need to format a pile of markdown at once.
+>
+> In this case, I wanted every method to solve one specific confusion I'd actually watched a student hit, not a hypothetical one.
+
+## Features
+
+- ✅ **Line endings** — `NormalizeLineEndings()`, `ToUnixLineEndings()`, `ToWindowsLineEndings()`, `ToMacLineEndings()`
+- ✅ **Casing** — `ToCamelCase()`, `ToKebabCase()`, `ToAlternatingCase()`, `ToLeetSpeak()`, and more
+- ✅ **Counting** — `CountWords()`, `CountVowels()`, `CountConsonants()`, `CountSentences()`, `CountOccurrences()`
+- ✅ **Validation** — `IsEmpty()`, `IsNullOrEmpty()`, `IsWhiteSpace()`
+- ✅ **Manipulation** — `Mask()`, `Truncate()`, `WrapTextAt()`, `Reverse()`, `Shuffle()`, `ShuffleWords()`, `CollapseWhitespace()`, `InsertAt()`, `Repeat()`
+- ✅ **Extraction** — pull structured pieces out of free text
+- ✅ **Pattern matching** — extension helpers over common regex-shaped problems
+- ✅ **Data-format conversion** — string ↔ common data formats
+
+## Requirements
+
+- .NET 10.0 or higher
 
 ## Installation
 
 ```bash
 dotnet add package MarcusMedina.Fluent.Text
 ```
-
-## Status
-
-This package is under active development in `_WIP_`.
 
 ## Documentation
 
