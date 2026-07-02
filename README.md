@@ -70,7 +70,7 @@ dotnet build -c Release
 
 All releases are signed with [cosign](https://docs.sigstore.dev) (Sigstore keyless signing).
 
-To verify a downloaded package, download both the `.nupkg` and its `.sigstore.json` bundle from the [GitHub Release](../https://github.com/MarcusMedinaPro/MarcusMedina.Fluent.Text/releases), then run:
+To verify a downloaded package, download both the `.nupkg` and its `.sigstore.json` bundle from the [GitHub Release](https://github.com/MarcusMedinaPro/MarcusMedina.Fluent.Text/releases), then run:
 
 ```bash
 cosign verify-blob <package.nupkg> \
