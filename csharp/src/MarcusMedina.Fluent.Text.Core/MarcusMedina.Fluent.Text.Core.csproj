@@ -12,13 +12,13 @@
 
 
     <PackageId>MarcusMedina.Fluent.Text</PackageId>
-    <Version>2.1.0</Version>
+    <Version>2.1.1</Version>
     <Authors>Marcus Ackre Medina</Authors>
     <Company>Marcus Ackre Medina</Company>
     <Product>MarcusMedina</Product>
     <Description>Fluent string extensions for line endings, casing, counting, validation, manipulation, extraction, pattern matching, data-format conversion, and word-set comparison (.NET 10+)</Description>
     <PackageTags>fluent;builder;text;strings;extension;marcusmedina;net10</PackageTags>
-    <PackageProjectUrl>https://github.com/MarcusMedinaPro/MarcusMedina.Fluent.Text</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/MarcusMedinaPro/MarcusMedina.Fluent.Text/wiki</PackageProjectUrl>
     <RepositoryUrl>https://github.com/MarcusMedinaPro/MarcusMedina.Fluent.Text</RepositoryUrl>
 <RepositoryType>git</RepositoryType>
 
@@ -39,7 +39,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="../../README.md" Pack="true" PackagePath="/" />
+    <None Include="../../../README.md" Pack="true" PackagePath="/" />
     <None Include="../../../icon.png" Pack="true" PackagePath="/" />
     <None Include="../../../assets/open-source.svg" Pack="true" PackagePath="assets/" />
   </ItemGroup>
