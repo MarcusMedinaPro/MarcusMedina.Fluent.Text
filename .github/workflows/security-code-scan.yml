@@ -60,7 +60,7 @@ jobs:
           echo "SecurityCodeScan findings: $total" | tee -a "$GITHUB_STEP_SUMMARY"
           cat "$RUNNER_TEMP"/sarif/*.sarif | grep -o '"ruleId": *"SCS[0-9]*"' | sort | uniq -c | tee -a "$GITHUB_STEP_SUMMARY"
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: security-code-scan-sarif
           path: ${{ runner.temp }}/sarif/*.sarif
