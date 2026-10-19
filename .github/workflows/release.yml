@@ -57,12 +57,12 @@ jobs:
       - run: dotnet pack ${{ env.PROJECT_PATH }} --configuration Release --no-build --output ./nupkgs
         name: Pack
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: unsigned-packages
           path: ./nupkgs/*.nupkg
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: test-results
@@ -100,7 +100,7 @@ jobs:
         name: Dependency Vulnerability Scan
         continue-on-error: true
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: quality-reports
@@ -134,7 +134,7 @@ jobs:
           cd unsigned
           sha256sum *.nupkg > SHA256SUMS.txt
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: signed-packages
           path: |
@@ -182,7 +182,7 @@ jobs:
           } > virustotal-summary.txt
           cat virustotal-summary.txt
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: scan-results
           path: virustotal-summary.txt
