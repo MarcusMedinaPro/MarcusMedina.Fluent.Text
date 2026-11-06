@@ -17,8 +17,7 @@ permissions:
   security-events: write
 
 env:
-  DOTNET_VERSION: |
-    10.0.x
+  DOTNET_VERSION: '10.0.x'
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
 

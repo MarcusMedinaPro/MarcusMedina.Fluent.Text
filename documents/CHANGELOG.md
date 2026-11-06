@@ -15,6 +15,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [3.0.0] - 2026-11-06
+
+### Changed (breaking)
+- Target framework is now **net10.0 only**. net8.0 and net9.0 are no longer supported (both reach end of support 2026-11-10). Consumers on those runtimes should stay on 2.1.2.
+
+### Build & CI
+- Standardised release pipeline: Trusted Publishing, VirusTotal scan, SecurityCodeScan on Linux, SHA-pinned actions.
+- Test dependency FluentAssertions 8.10.0 -> 8.11.0.
+
+---
+
 ## [1.1.0] - 2025-10-08
 
 ### Changed
