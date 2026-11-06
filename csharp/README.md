@@ -2,7 +2,7 @@
 
 **Enterprise-grade** fluent string extensions for C# with comprehensive testing and documentation.
 
-[![NuGet](https://img.shields.io/badge/nuget-v2.1.0-blue)]()
+[![NuGet](https://img.shields.io/badge/nuget-v3.0.0-blue)]()
 [![.NET 10.0](https://img.shields.io/badge/.NET-10.0-blue)]()
 [![Build](https://img.shields.io/badge/build-passing-brightgreen)]()
 [![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)]()
@@ -210,7 +210,7 @@ list.ToJsonArray();                            // [["Name"],["John"]]
 ✅ **Complete Documentation** - XML docs with examples for every method
 ✅ **Null-Safe & Culture-Aware** - Production-ready reliability
 ✅ **Educational** - Perfect for learning extension methods and TDD
-✅ **Modern .NET 8.0** - File-scoped namespaces, nullable reference types
+✅ **Modern .NET 10.0** - File-scoped namespaces, nullable reference types
 
 ---
 
