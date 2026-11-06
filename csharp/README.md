@@ -210,7 +210,7 @@ list.ToJsonArray();                            // [["Name"],["John"]]
 ✅ **Complete Documentation** - XML docs with examples for every method
 ✅ **Null-Safe & Culture-Aware** - Production-ready reliability
 ✅ **Educational** - Perfect for learning extension methods and TDD
-✅ **Modern .NET 8.0** - File-scoped namespaces, nullable reference types
+✅ **Modern .NET 10.0** - File-scoped namespaces, nullable reference types
 
 ---
 

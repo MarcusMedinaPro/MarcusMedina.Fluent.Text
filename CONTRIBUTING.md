@@ -9,7 +9,7 @@ Thank you for your interest in contributing! This project follows **enterprise-g
 ### C# / .NET
 
 **Prerequisites:**
-- .NET 8.0 SDK or higher
+- .NET 10.0 SDK or higher
 - Git
 - IDE with EditorConfig support (VS Code, Visual Studio, Rider)
 

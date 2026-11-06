@@ -10,7 +10,7 @@ dotnet add package MarcusMedina.Fluent.Text.Core.Core
 
 ## Requirements
 
-- net8.0 or compatible target
+- net10.0 or compatible target
 - Nullable reference types enabled when possible
 
 ## Basic Usage

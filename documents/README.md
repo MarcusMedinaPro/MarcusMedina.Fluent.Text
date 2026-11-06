@@ -29,7 +29,7 @@ Unlike LINQ which adds 200+ methods to every collection, FluentBuilders.Text use
 
 ### ✅ Production-Ready
 
-- **[C# / .NET 8.0](./csharp/)** - `MarcusMedina.Fluent.Text` on NuGet
+- **[C# / .NET 10.0](./csharp/)** - `MarcusMedina.Fluent.Text` on NuGet
   - 95+ extension methods across 7 semantic namespaces
   - 95%+ test coverage, zero vulnerabilities
   - Enterprise-grade CI/CD with multi-platform testing
